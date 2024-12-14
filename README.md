@@ -4,7 +4,9 @@ I chose to create an Optical Character Recognition model using Ridge-regularized
 
 ## Dataset
 I thought this would be a good fit for an OCR model given that we won't be dealing with sparse data. I was able to find a dataset [here]("https://ai.stanford.edu/%7Ebtaskar/ocr/") that gave a list of 8x16 binary images that encoded letters.
+
 ![8x16 binary image of the letter 'o'](./images/letter_o.png)
+
 the letter `o`
 
 
@@ -16,12 +18,15 @@ The dataset is designed with 26 classes (one for each letter of the alphabet), a
 
 ## Testing
 As a demo, I made a quick java program that allows you to draw your own 8x16 letter, and turn it into an array you can paste into the python notebook. I used it to write out "comp five six two" to test my classifier.
+
 !['compfivesixtwo' written out in 8x16 binary images](./images/compfivesixtwo.png)
+
 We can see that some letters were misclassified, like the `e` turning into a `z` and the `w` turning into a `u`.
 
 ## Possible improvements
 I believe, given more time, I could create a better model with my current method and better hyperparameters. The issue with increasing the number of iterations, though, is that it could lead to overfitting. 
 Similarly, the dataset I am using is not very large and has some weirdly written letters. For example, the letter f:
+
 ![the letter f](./images/f.png)
 
 I experimented with the [emnist-letters dataset](https://www.kaggle.com/datasets/crawford/emnist?resource=download&select=emnist-letters-test.csv), but found that I was not able to get a good result in any reasonable amount of time. So, I stuck with my quirky dataset.
